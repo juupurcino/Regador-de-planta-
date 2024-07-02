@@ -1,8 +1,16 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
 html, body {
-    background-color:aquamarine
+    background-color:white;
 
     *{
-        color: var(--default-color);
+        color:white;
     }
 }
 
@@ -11,4 +19,31 @@ header {
     height: 4rem;
     background-color:aqua;
     box-shadow: 0 10px 20px 2px rgba(112, 112, 112, 0.61);
+}
+
+.centralize {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: black;
+}
+
+.botao{
+    text-align: center; 
+    background-color: #6D7C67; 
+    border-color: black;
+    color: white;
+    padding: 1rem 5rem;
+    font-size: 30px; top: 50;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.botao:hover{
+    background-color: rgb(93, 104, 89);
+    color: rgba(255, 255, 255, 0.616);
 }

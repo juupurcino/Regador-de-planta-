@@ -1,0 +1,120 @@
+:root{
+    --default-color: #ffffff;
+    --background-color: #FFFAF6;
+    --header-color: #38384d;
+}
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  */
+    font-family: "Montserrat", sans-serif;
+}
+
+header a{
+    text-decoration: none;
+    color: #6D7C67;
+    font-size: 2em;
+    margin: 40px;
+}
+ body h1{
+    margin-bottom: 15%;
+ }
+
+html, body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-color);
+
+    *{
+        color: var(--default-color);
+    }
+}
+button {
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+}
+
+main {
+    width: 100%;
+    margin-top: 10%;
+    /* height: calc(100vh - 5rem); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.top {
+    margin: 2rem;
+}
+
+.centralize {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home {
+    flex-wrap: wrap;
+    gap: .25rem;
+    background-color: rgba(255, 255, 255, 0.418);
+    box-shadow: 0 0 10px white;
+    border-radius: 2rem ;
+    overflow: hidden;
+
+    .place {
+        background-color: #6D7C67;
+        border-radius: 15px;
+        min-width: 20rem;
+        min-height: 20rem;
+        box-shadow: 2px 4px 4px #38384d;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem ;
+
+        .light-bulb{
+            transform: rotate(180deg);
+            
+            span {
+                font-size: 50px
+            }
+
+            .light-on {
+                color: yellow;
+                filter: drop-shadow(0 0 10px rgb(245, 255, 106));
+            }
+        }
+
+        .temperature-details {
+            width: 100%;
+            justify-content: space-around;
+
+            .humidity, .temperature{
+
+                .material-symbols-outlined{
+                    font-size: 30px;                    
+                }
+            }
+
+        }
+
+        .accessories {
+            *{
+                gap: .5rem;
+            }
+            span {
+                font-size:35px;
+            }
+        }
+
+        .content {
+            cursor: pointer;
+        }
+    }
+}
