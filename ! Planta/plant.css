@@ -47,3 +47,10 @@ h1 {
     background-color: rgb(93, 104, 89);
     color: rgba(255, 255, 255, 0.616);
 }
+
+.quadrado{
+    background-color: #6D7C67;
+    width: 800px;
+    height: 1500px;
+    background-position: right;
+}

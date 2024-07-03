@@ -22,6 +22,10 @@ header a{
     margin-bottom: 15%;
  }
 
+h2{
+    font-size: 30px;
+}
+
 html, body {
     display: flex;
     flex-direction: column;
@@ -67,16 +71,18 @@ main {
     overflow: hidden;
 
     .place {
+        
         background-color: #6D7C67;
         border-radius: 15px;
         min-width: 20rem;
-        min-height: 20rem;
+        min-height: 17rem;
         box-shadow: 2px 4px 4px #38384d;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 2rem ;
+        margin: 25px;
 
         .light-bulb{
             transform: rotate(180deg);
