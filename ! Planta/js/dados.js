@@ -7,15 +7,13 @@ var body = {
     
 }
 
-var bigode = 0;
-
 // Carregando dados do meu banco
 const loadData = () => {
     service.load(endPoint).then( data => {
         body = data;
         // console.log(body);
 
-        const rooms = ['Planta1', 'Planta2', 'Planta3']
+        const rooms = ['Planta1']
         rooms.forEach(room => {
             // getLightsValues(room)
             // getTvValues(room)
@@ -76,11 +74,9 @@ const loadData = () => {
 const setTempValues = (idLocal) => {
     const TempElement = document.getElementById(idLocal + "Temperatura")
     const HumidElement = document.getElementById(idLocal + "UmidadeSolo")
-    const LevelElement = document.getElementById(idLocal + "NivelAgua")
 
     let Hvalue = 0;
     let Tvalue = 0;
-    let Nvalue = body.NivelAgua;
 
     switch (idLocal) {
         case 'Planta1':
@@ -101,32 +97,27 @@ const setTempValues = (idLocal) => {
         default:
             break;
     }
-
-    if(Nvalue){ 
-        LevelElement.innerHTML = 'OK 😎'
-    } else {
-        LevelElement.innerHTML = 'Repor 😥'
-    }
     
-    TempElement.innerHTML = Tvalue + '°C'
-    HumidElement.innerHTML = Hvalue + '%'
+    TempElement.innerHTML = Tvalue
+    HumidElement.innerHTML = Hvalue
 }
 
 // ================== Funções de Interação com HTML ==================
 
-const Regar = () => {
 
+const Regar = () => {
     let value = body.Repor 
 
     if(value == 0)
     {
         body.Repor = 1
         service.set(endPoint, body)
+
     } else {
         body.Repor = 0
         service.set(endPoint, body)
+
     }
-    
 
     // switch (idRoom) {
     //     case "Planta1":
@@ -147,7 +138,6 @@ const Regar = () => {
     //     default:
     //         break;
 }
-
 
 // const toggleTv = (idRoom) => {
 //     const element = document.getElementById(idRoom + "Tv")

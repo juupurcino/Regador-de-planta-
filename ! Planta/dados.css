@@ -97,6 +97,28 @@ main {
             }
         }
 
+        .color{
+
+            
+
+            span {
+                font-size: 50px
+            }
+
+            .soundOK {
+                color: rgb(29, 142, 248);
+                filter: drop-shadow(0 0 10px rgb(107, 213, 255));
+            }
+
+            .material-symbols-outlined{
+                width: 100%;
+                justify-content: space-around;            
+            }
+
+            
+
+        }
+
         .temperature-details {
             width: 100%;
             justify-content: space-around;

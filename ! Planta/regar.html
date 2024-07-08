@@ -4,14 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regar</title>
+    <title>Regar 😏</title>
     <link rel="stylesheet" href="dados.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
 
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <!-- Add the Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
 
+    <script type="module" src="./dados.js"></script>
 </head>
 
 <body>
@@ -28,14 +33,14 @@
         <img src="imagens/regador.png" width="984px" height="565px">
     </div>
     
-    <div class="quadrado" style="position: relative; top: -65rem; right: 30rem;">
+    <div class="quadrado" id='Planta1' style="position: relative; top: -65rem; right: 30rem;">
     <div>
-        <button class="botao"
+        <button class="botao" onclick="Regar()"
             style="position: relative; top: 1.5rem; right: -2.7rem; padding: 2rem 5rem; font-size: 50px;">Regar
-            <button>
+        </button>
     </div>
         <span class="temperature centralize">
-            <span class="material-symbols-outlined"
+            <span id="color" class="material-symbols-outlined"
                 style="font-size: 150px; position: relative; top: 5rem;">water_drop</span>
         </span>
     </div>

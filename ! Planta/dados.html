@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dados da planta</title>
+    <title>Dados da planta 😁</title>
     <link rel="stylesheet" href="dados.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <!-- Add the Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+
+    <script type="module" src="./dados.js"></script>
 </head>
 <body>
     <header class="centralize">
@@ -21,28 +28,28 @@
         
         <h1 style="color: black; font-size: 3em; position: relative; top: 1.5rem;">Dados da planta</h1>
         <div class="home centralize">
-            <div class="place" id="Umidade">
+            <div class="place" id="Planta1">
                 <h2 style="text-align: center; position: relative; top: -2rem;">Umidade do <br>solo</h2>
                 <span class="temperature centralize">
                     <span class="material-symbols-outlined" style="font-size: 40px; position: relative; top: 1rem;">humidity_indoor</span>
-                    <h3 style="font-size: 30px; position: relative; top: 1rem;" id="LivingRoomTemp">31°C</h3>
+                    <h3 style="font-size: 30px; position: relative; top: 1rem;" id="Planta1UmidadeSolo">-</h3>
                 </span>
             </div>
 
-            <div class="place">
+            <div class="place" id="Planta1">
                 <h2 style="text-align: center; position: relative; top: -3.2rem;">Nivel da água</h2>
                 <span class="temperature centralize">
                     <span class="material-symbols-outlined" style="font-size: 40px; position: relative; top: 2rem;">water_drop</span>
-                    <h3 style="font-size: 30px; position: relative; top: 2rem;" id="LivingRoomTemp">31°C</h3>
+                    <h3 style="font-size: 30px; position: relative; top: 2rem;" id="Planta1NivelAgua">-</h3>
                 </span>
             </div>
 
             
-            <div class="place">
+            <div class="place" id="Planta1">
                 <h2 style="text-align: center; position: relative; top: -3.2rem;">Temperatura</h2>
                 <span class="temperature centralize">
                     <span class="material-symbols-outlined" style="font-size: 40px; position: relative; top: 2rem;">device_thermostat</span>
-                    <h3 style="font-size: 30px; position: relative; top: 2rem;" id="LivingRoomTemp">31°C</h3>
+                    <h3 style="font-size: 30px; position: relative; top: 2rem;" id="Planta1Temperatura">-</h3>
                 </span>
             </div>
         </div>
