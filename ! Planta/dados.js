@@ -122,6 +122,7 @@ const Regar = () => {
     {
         body.Repor = 1
         service.set(endPoint, body)
+        
     } else {
         body.Repor = 0
         service.set(endPoint, body)

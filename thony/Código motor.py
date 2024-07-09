@@ -1,9 +1,11 @@
-from machine import Pin, ADC
+from machine import Pin, ADC, PWM
 import time
 import dht
 import network
 import ujson
 import urequests
+
+
 
 #Definição dos pinos
 sinalUmi = ADC(Pin(34))
@@ -11,6 +13,43 @@ dht_sensor = dht.DHT11(Pin(25))
 base = Pin(33, Pin.OUT)
 nivel_agua = Pin(23, Pin.IN)
 regar = 0
+
+# Configuração do buzzer (conectado ao pino 13)
+pin_buzzer = 13
+buzzer = PWM(Pin(pin_buzzer))
+
+# Definição das notas e durações
+melody = [
+    ('G', 500), ('G', 500), ('G', 500), ('G', 500),
+    ('A', 500), ('B', 500), ('A', 1000),
+    ('G', 500), ('G', 500), ('G', 500), ('G', 500),
+    ('A', 500), ('B', 500), ('A', 1000),
+    ('G', 500), ('G', 500), ('G', 500), ('G', 500),
+    ('G', 500), ('F#', 500), ('E', 500), ('D', 1000),
+    ('E', 500), ('E', 500), ('E', 500), ('E', 500),
+    ('D', 500), ('C', 500), ('B', 500), ('A', 1000)
+]
+
+# Tabela de frequências para as notas musicais
+notes_freq = {
+    'C': 262, 'D': 294, 'E': 330, 'F': 349, 'F#': 370, 'G': 392,
+    'G#': 415, 'A': 440, 'B': 494, 'C#': 277, 'D#': 311, ' ': 0
+}
+
+# Função para tocar uma nota com o buzzer
+def play_note(note, duration):
+    if note in notes_freq:
+        buzzer.freq(notes_freq[note])
+        buzzer.duty(50)
+        time.sleep_ms(duration)
+        buzzer.duty(0)
+        time.sleep_ms(50)  # pausa entre as notas
+
+# Função principal para tocar a melodia
+def play_melody():
+    for note, duration in melody:
+        play_note(note, duration)
+
 
 #Credenciais do wifi
 nome = "Wifi Amilton"
@@ -102,6 +141,8 @@ while True:
     # Controle da base
     if value <= 10 or regar == 1:
         base.on()
+        # Tocar a melodia quando o programa é executado
+        play_melody()
         print("---------------")
         print("| BASE LIGADA |")
         print("---------------")
