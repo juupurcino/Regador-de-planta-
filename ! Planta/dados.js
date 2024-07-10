@@ -15,7 +15,7 @@ const loadData = () => {
         body = data;
         // console.log(body);
 
-        const rooms = ['Planta1', 'Planta2', 'Planta3']
+        const rooms = ['Planta1']
         rooms.forEach(room => {
             // getLightsValues(room)
             // getTvValues(room)
